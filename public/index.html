@@ -56,7 +56,7 @@
 
         button[type="submit"] {
             padding: 8px 16px;
-            background-color: #007bff;
+            background-color: #000000;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -103,6 +103,38 @@
             color: red;
         }
 
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            padding: 3px 8px;
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            font-size: medium;
+            transition: background-color 0.2s;
+        }
+
+        .nav-links a:hover {
+            background-color: #0056b3;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 600px) {
             .container {
@@ -134,6 +166,7 @@
             button[type="submit"] {
                 font-size: 14px;
             }
+        
         }
     </style>
 </head>
@@ -166,4 +199,11 @@
     </div>
     <script src="script.js"></script>
 </body>
+<footer>
+    <div class="footer">
+        <div class="nav-links">
+            <a href="https://btechnotes.vercel.app">BTech Notes</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+</footer>
 </html>
