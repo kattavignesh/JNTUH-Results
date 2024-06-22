@@ -11,6 +11,19 @@
     <title>Academic Results</title>
     <style>
         /* General styles */
+        html, body {
+            background-image: url('png.jpg');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -70,7 +83,13 @@
             transition: background-color 0.3s ease;
             width: calc(100% - 120px); /* Adjust width for mobile */
             max-width: 200px; /* Limit maximum width */
-            margin-left: 10px; /* Add left margin for spacing */
+            margin-left: 135px; /* Add left margin for spacing */
+            
+        }
+
+        button:active {
+            transform: scale(0.95); /* Scale down */
+            background-color: #f0f0f0; /* Darker green */
         }
 
         button[type="submit"]:hover {
