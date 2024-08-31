@@ -1,18 +1,15 @@
 {
   "name": "jntuh-results",
   "version": "1.0.0",
-  "description": "access student results of jntuh",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "echo 'No build step required'"
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.2",
+    "axios": "^1.5.0"
   },
   "engines": {
     "node": ">=14.x"
-  },
-  "author": "Katta Vignesh",
-  "license": "MIT"
+  }
 }
