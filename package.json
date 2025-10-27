@@ -1,7 +1,7 @@
 {
   "name": "jntuh-results-pro",
   "version": "1.0.0",
-  "description": "JNTUH results pro viewer with glassmorphism theme and SGPA/CGPA",
+  "description": "JNTUH results with glassmorphism theme and SGPA/CGPA",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
