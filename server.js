@@ -23,11 +23,9 @@ app.get('/api/results', async (req, res) => {
             }
         );
 
-        // Pass through response (as-is)
         res.json(response.data);
     } catch (error) {
-        console.error('API fetch error:', error.message || error);
-        // If upstream responded with JSON error, forward details if available:
+        console.error('API fetch error:', (error.response && error.response.status) ? `${error.response.status} ${error.response.statusText}` : error.message || error);
         if (error.response && error.response.data) {
             return res.status(502).json({ error: 'Upstream API error', details: error.response.data });
         }

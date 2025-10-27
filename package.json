@@ -1,15 +1,13 @@
 {
-  "name": "jntuh-results",
+  "name": "jntuh-results-pro",
   "version": "1.0.0",
+  "description": "JNTUH results pro viewer with glassmorphism theme and SGPA/CGPA",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "axios": "^1.5.0"
-  },
-  "engines": {
-    "node": ">=14.x"
+    "axios": "^1.5.0",
+    "express": "^4.18.2"
   }
 }
