@@ -8,14 +8,20 @@ const PORT = 3000;
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Proxy route
+// Updated Proxy Route
 app.get('/api/results', async (req, res) => {
     const { rollNo } = req.query;
-    
+
     try {
-        const response = await axios.get(`https://jntuhresults.up.railway.app/api/academicallresult?htno=${encodeURIComponent(rollNo)}`);
+        const response = await axios.get(
+            `https://jntuhresults.dhethi.com/api/getAllResult?rollNumber=${encodeURIComponent(rollNo)}`,
+            {
+                headers: { accept: 'application/json' }
+            }
+        );
         res.json(response.data);
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Failed to fetch data from API' });
     }
 });
