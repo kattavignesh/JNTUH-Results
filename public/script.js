@@ -166,7 +166,7 @@ function renderSemesters(resultsArray, summariesObj) {
           <div class="small-note">SGPA: <strong>${summary.sgpa ?? '—'}</strong> • Credits: ${summary.totalCredits}</div>
         </div>
         <div>
-          ${summary.backlogs && summary.backlogs > 0 ? `<span class="fail">Backlogs: ${summary.backlogs}</span>` : `<span class="badge">OK</span>`}
+          ${summary.backlogs && summary.backlogs > 0 ? `<span class="fail">Backlogs: ${summary.backlogs}</span>` : `<span class="badge">CLEAR</span>`}
         </div>
       </div>
       <div class="sem-body" style="display:none; margin-top:12px;">
