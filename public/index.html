@@ -1,86 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<style>
-    .footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-links a {
-            padding: 3px 8px;
-            text-decoration: none;
-            background-color: black;
-            color: white;
-            border-radius: 5px;
-            font-size: medium;
-            transition: background-color 0.2s;
-        }
-
-        .nav-links a:hover {
-            background-color: #0056b3;
-        }
-</style>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-    <title>JNTUH RESULTS</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JNTUH Results — Pro Viewer</title>
+    <link rel="stylesheet" href="style.css"/>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>JNTUH RESULTS</h1>
-    <form id="resultsForm">
-        <label for="rollNo">Enter Roll Number:</label>
-        <input type="text" id="rollNo" name="rollNo" required>
-        <button type="submit">Get Results</button>
-    </form>
-    <div id="loading" style="display:none;">Loading...</div>
-    <div id="error" style="color:red; display:none;"></div>
-    <div id="results">
-        <h2>Student Details</h2>
-        <div id="studentDetails"></div>
-        <h2>Results</h2>
-        <table id="results_table" style="display:none;">
-            <thead>
-                <tr>
-                    <th>Subject Code</th>
-                    <th>Subject Name</th>
-                    <th>Internal Marks</th>
-                    <th>External Marks</th>
-                    <th>Total Marks</th>
-                    <th>Grade</th>
-                    <th>Credits</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+    <header class="topbar">
+        <h1>JNTUH Results — Pro Viewer</h1>
+    </header>
+
+    <main class="container">
+        <section class="search-card">
+            <form id="resultsForm" class="form-inline">
+                <input id="rollNo" name="rollNo" placeholder="Enter roll number e.g. 23XZ1A0525" required />
+                <button type="submit">Get Results</button>
+            </form>
+            <div id="loading" class="muted" style="display:none;">Loading…</div>
+            <div id="error" class="error" style="display:none;"></div>
+        </section>
+
+        <section id="studentArea" class="student-area" style="display:none;">
+            <div class="student-card" id="studentDetails"></div>
+
+            <div class="summary-row">
+                <div class="summary-panel">
+                    <h3>CGPA</h3>
+                    <div id="cgpaValue" class="big-value">—</div>
+                    <div id="totalCredits" class="muted small">Credits: —</div>
+                </div>
+
+                <div class="summary-panel">
+                    <h3>Backlogs</h3>
+                    <div id="backlogCount" class="big-value">0</div>
+                    <div class="muted small">Subjects with grade F</div>
+                </div>
+
+                <div class="chart-panel">
+                    <canvas id="sgpaChart" width="400" height="120"></canvas>
+                </div>
+            </div>
+
+            <div id="semestersContainer" class="accordion"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>Made with ❤️ — Pro Viewer</div>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-
-<footer class="footer">
-    <div class="nav-links">
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="privacy.html">Privacy Policy</a>
-    </div>
-</footer>
-</body>
 </html>
-
-
